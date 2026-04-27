@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{ userDetail.name }}</p>
+  <div class="row">
+    <div class="col-2">
+      <div class="thumb">
+        <img
+          class="img-fluid"
+          src="{{ userDetail.avatarUrl }}"
+          alt="{{ userDetail.name }}"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <dl>
+        <dt>Username</dt>
+        <dd class="caption">{{ userDetail.username }}</dd>
+        <dt>Email</dt>
+        <dd>{{ userDetail.email }}</dd>
+        <hr />
+        <dt>Location</dt>
+        <dd>{{ userDetail.location }}</dd>
+        <hr />
+        <dt class="bold">Role</dt>
+        <dd class="caption">{{ userDetail.role }}</dd>
+        <hr />
+        <dt class="bold">Repositories</dt>
+        <dd *ngFor="let repo of repositories" class="caption">
+          {{ repo.name }} - {{ repo.language }} ({{ repo.stars }} stars)
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
