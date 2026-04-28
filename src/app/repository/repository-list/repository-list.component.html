@@ -1,0 +1,28 @@
+<div class="container-fluid p-4">
+  <div class="header-section">
+    <h1 class="page-title">Repositorios Activos</h1>
+    <p class="page-subtitle">{{ repositories.length }} repositorios</p>
+  </div>
+  
+  <div class="row">
+    <div *ngFor="let repository of repositories" class="col-md-3 mb-4">
+      <div class="card repository-card">
+        <div class="card-body">
+          <h5 class="card-title">{{ repository.name }}</h5>
+          <p class="card-text">
+            {{ repository.description.substring(0, 80) || 'Sin descripción' }}
+            <span *ngIf="repository.description && repository.description.length > 80">...</span>
+          </p>
+          <div>
+            <span class="badge-language">{{ repository.language }}</span>
+            <span class="badge-stars">
+              <span class="material-icons star-icon">star</span>
+              {{ repository.stars }}
+            </span>
+          </div>
+          <a [routerLink]="['/repositories', repository.id]" class="btn-detail">Ver detalle →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+.header-section {
+  margin-bottom: 32px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #dae2fd;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: #c7c4d7;
+  margin: 0;
+}
+
+.repository-card {
+  background: #171f33;
+  border: 1px solid #464554;
+  border-radius: 8px;
+  transition: all 0.2s;
+  height: 100%;
+}
+
+.repository-card:hover {
+  background: #222a3d;
+  border-color: #c0c1ff;
+  transform: translateY(-2px);
+}
+
+.card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #dae2fd;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #c7c4d7;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.badge-language {
+  display: inline-block;
+  background: #2d3449;
+  color: #4fdbc8;
+  border: 1px solid rgba(79, 219, 200, 0.2);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  margin-right: 8px;
+}
+
+.badge-stars {
+  background: rgba(255, 183, 131, 0.2);
+  color: #ffb783;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.star-icon {
+  font-size: 16px;
+  color: #ffb783;
+}
+
+.btn-detail {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border: 1px solid #464554;
+  color: #c0c1ff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-top: 16px;
+}
+
+.btn-detail:hover {
+  background: #c0c1ff;
+  color: #0b1326;
+}

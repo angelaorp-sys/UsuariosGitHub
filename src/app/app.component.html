@@ -1,0 +1,29 @@
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-icon">
+      <span class="material-icons">code</span>
+    </div>
+    <div class="logo-text">
+      <span class="logo-title">GitExplorer</span>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a routerLink="/users" routerLinkActive="active" class="nav-item">
+      <span class="material-icons">group</span>
+      <span>USUARIOS</span>
+    </a>
+    <a routerLink="/repositories" routerLinkActive="active" class="nav-item">
+      <span class="material-icons">folder</span>
+      <span>REPOSITORIOS</span>
+    </a>
+  </nav>
+
+</aside>
+
+<main class="main-content">
+  <div class="content-area">
+    <router-outlet></router-outlet>
+  </div>
+</main>
