@@ -24,4 +24,16 @@ export class RepositoryService {
     );
   }
 
+  getRepositoryById(id: number): Observable<Repository> {
+    return this.getRepositories().pipe(
+      map(repos => {
+        const repository = repos.find(repo => repo.id === id);
+        if (!repository) {
+          throw new Error(`Repository with id ${id} not found`);
+        }
+        return repository;
+      })
+    );
+  }
+
 }

@@ -1,7 +1,7 @@
-<div class="container-fluid">
-  <p class="h3 p-3">{{ userDetail.name }}</p>
+<div class="container-fluid px-4 py-5">
+  <p class="h3 mb-4">{{ userDetail.name }}</p>
   <div class="row">
-    <div class="col-2">
+    <div class="col-4">
       <div class="thumb">
         <img
           class="img-fluid"
@@ -12,20 +12,20 @@
     </div>
     <div class="col">
       <dl>
-        <dt>Username</dt>
+        <dt>Nombre de usuario</dt>
         <dd class="caption">{{ userDetail.username }}</dd>
-        <dt>Email</dt>
+        <dt>Correo electrónico</dt>
         <dd>{{ userDetail.email }}</dd>
         <hr />
-        <dt>Location</dt>
+        <dt>Ubicación</dt>
         <dd>{{ userDetail.location }}</dd>
         <hr />
-        <dt class="bold">Role</dt>
+        <dt class="bold">Rol</dt>
         <dd class="caption">{{ userDetail.role }}</dd>
         <hr />
-        <dt class="bold">Repositories</dt>
+        <dt class="bold">Repositorios</dt>
         <dd *ngFor="let repo of repositories" class="caption">
-          {{ repo.name }} - {{ repo.language }} ({{ repo.stars }} stars)
+          {{ repo.name }} - {{ repo.language }} ({{ repo.stars }} estrellas)
         </dd>
       </dl>
     </div>

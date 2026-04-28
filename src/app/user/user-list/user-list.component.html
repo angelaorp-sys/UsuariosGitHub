@@ -1,26 +1,32 @@
-<div *ngIf="selected">
-  <app-user-detail [userDetail]="selectedUser"></app-user-detail>
-</div>
-
-
-<hr />
-
-
-<div class="container-fluid">
-  <div class="row">
-    <div *ngFor="let user of users" class="col mb-2">
-      <div class="card p-2" style="width: 15rem; height: 33rem">
-        <img
-          class="card-img-top"
-          src="{{ user.avatarUrl }}"
-          alt="{{ user.name }}"
-          (click)="onSelected(user)"
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{ user.name }}</h5>
-          <p class="card-text">[{{ user.role }}]</p>
+<div class="user-container">
+  <div class="user-list-panel">
+    <div class="list-header">
+      <h2>Usuarios Activos</h2>
+      <span class="user-count">{{ users.length }} Usuarios</span>
+    </div>
+    <div class="user-list-scroll">
+      <div *ngFor="let user of users" 
+           class="user-card" 
+           [class.active]="selected && selectedUser.id === user.id"
+           (click)="onSelected(user)">
+        <img src="{{ user.avatarUrl }}" alt="{{ user.name }}" class="user-avatar" />
+        <div class="user-info">
+          <h3>{{ user.name }}</h3>
+          <span class="user-role">{{ user.role }}</span>
+          <p class="user-subtitle">{{ user.username }}</p>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="user-detail-panel" *ngIf="selected">
+    <app-user-detail [userDetail]="selectedUser"></app-user-detail>
+  </div>
+
+  <div class="user-detail-panel" *ngIf="!selected">
+    <div class="empty-state">
+      <span class="material-icons empty-icon">person_search</span>
+      <p>Selecciona un usuario para ver su perfil</p>
     </div>
   </div>
 </div>

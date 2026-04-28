@@ -1,0 +1,56 @@
+<div class="container-fluid p-5" *ngIf="repositoryDetail">
+  <button class="btn-back" routerLink="/repositories">
+    <span class="material-icons">arrow_back</span>
+    Volver a la lista
+  </button>
+  
+  <div class="detail-card">
+    <div class="card-header">
+      <span class="material-icons folder-icon">folder</span>
+      <h1 class="repo-title">{{ repositoryDetail.name }}</h1>
+    </div>
+    
+    <div class="card-body">
+      <div class="info-section">
+        <div class="info-label">Descripción</div>
+        <div class="info-value">{{ repositoryDetail.description }}</div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="info-label">Lenguaje</div>
+          <div class="info-value">
+            <span class="badge-language">{{ repositoryDetail.language }}</span>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="info-label">Estrellas</div>
+          <div class="info-value badge-stars">
+            <span class="material-icons star-icon">star</span>
+            {{ repositoryDetail.stars }}
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="info-label">Fecha de creación</div>
+          <div class="info-value">{{ repositoryDetail.createdAt | date:'medium' }}</div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="info-label">ID del propietario</div>
+          <div class="info-value">#{{ repositoryDetail.ownerId }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loading-container" *ngIf="!repositoryDetail">
+  <div class="loading-message">
+    <span class="material-icons loading-icon">hourglass_empty</span>
+    <p>Cargando información del repositorio...</p>
+  </div>
+</div>
